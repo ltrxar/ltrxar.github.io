@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../sc_2_validation/">
+        <link rel="prev" href="../sc1_t8/">
       
       
-        <link rel="next" href="../appendix/">
+        <link rel="next" href="../scenario_2/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Continue Your Education - LTRXAR</title>
+        <title>Recap - LTRXAR</title>
       
     
     
@@ -60,11 +60,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#continue-your-education" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continue Your Education
+              Recap
             
           </span>
         </div>
@@ -258,14 +253,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -274,7 +271,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Scenario 1
@@ -411,11 +408,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../sc1_recap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Recap
       </a>
+      
     </li>
   
 
@@ -496,21 +501,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
         Continue Your Education
       </a>
-      
     </li>
   
 
@@ -547,8 +542,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -563,17 +556,17 @@
                   
 
 
-<h1 id="continue-your-education">Continue your education!</h1>
-<p>BRKXAR-1000: Creating an Application-Optimized Secure Access Service Edge (SASE)-Enabled Architecture<br />
-Kyle Barnes<br />
-BRKXAR-2005: Segmentation Simplified: A Case Study of Meraki Adaptive Policy and Cisco TrustSec<br />
-Praveen Poojary <br />
-BRKXAR-2015: Extend the Enterprise to the Cloud: AWS Cloud integration with Enterprise SD-WAN<br />
-Praveen Poojary<br />
-LABDEV-1102: Secure-X Orchestrator (SXO) - Manifest simplicity and efficiency via automation<br />
-Navin Suvarna<br />
-LABDEV-2007: NSO - Developing Python and Template-Based Service<br />
-Navin Suvarna  </p>
+  <h1>Recap</h1>
+
+<p>What did we just do?  Lets recap steps 1-8:</p>
+<ol>
+<li>We created 2 VPN feature templates (0 &amp; 512)</li>
+<li>We created a service VPN template (VPN10)</li>
+<li>We created 3 interface feature templates</li>
+<li>We associated these feature templates into a device template</li>
+<li>We attached this device template to a C8000v with the UUID of an C8000v within our lab environment.  </li>
+</ol>
+<p>Note: This is for demonstration purposes and this specific C8000v is not currently online.  We’ve assigned this device template to this UUID should it come online it will have the configuration associated with these feature templates.  </p>
 
 
 

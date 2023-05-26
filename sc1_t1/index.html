@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../sc_2_validation/">
+        <link rel="prev" href="../sc_1_desc/">
       
       
-        <link rel="next" href="../appendix/">
+        <link rel="next" href="../sc1_t2/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Continue Your Education - LTRXAR</title>
+        <title>Task 1 - LTRXAR</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#continue-your-education" class="md-skip">
+        <a href="#task-1-deploy-feature-vpn0-template" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continue Your Education
+              Task 1
             
           </span>
         </div>
@@ -258,14 +258,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -274,7 +276,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Scenario 1
@@ -299,11 +301,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../sc1_t1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Task 1
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-deploy-feature-vpn0-template" class="md-nav__link">
+    Task 1: Deploy Feature VPN0 Template
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -496,21 +535,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
         Continue Your Education
       </a>
-      
     </li>
   
 
@@ -547,8 +576,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-deploy-feature-vpn0-template" class="md-nav__link">
+    Task 1: Deploy Feature VPN0 Template
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -563,17 +605,106 @@
                   
 
 
-<h1 id="continue-your-education">Continue your education!</h1>
-<p>BRKXAR-1000: Creating an Application-Optimized Secure Access Service Edge (SASE)-Enabled Architecture<br />
-Kyle Barnes<br />
-BRKXAR-2005: Segmentation Simplified: A Case Study of Meraki Adaptive Policy and Cisco TrustSec<br />
-Praveen Poojary <br />
-BRKXAR-2015: Extend the Enterprise to the Cloud: AWS Cloud integration with Enterprise SD-WAN<br />
-Praveen Poojary<br />
-LABDEV-1102: Secure-X Orchestrator (SXO) - Manifest simplicity and efficiency via automation<br />
-Navin Suvarna<br />
-LABDEV-2007: NSO - Developing Python and Template-Based Service<br />
-Navin Suvarna  </p>
+  <h1>Task 1</h1>
+
+<h2 id="task-1-deploy-feature-vpn0-template">Task 1: Deploy Feature VPN0 Template</h2>
+<p>Using the logic explained in the key concepts introduction, we’re going to develop our own template based on a number of user-defined variables.  In this first feature template example, we ‘care’ about the following:    <br />
+1.  Template Name<br />
+2.  Template Description<br />
+3.  DNS Address<br />
+4.  Default next hop<br />
+5.  Default next hop Distance    </p>
+<p>Given we know WHAT we want to modify, we now need to create a J2 template (using the vmanage-templates.yml ‘dump’ created previously).  A J2 template is formatted in JSON so we’ll take the template we which to templatize (VPN0) and convert it into JSON.<br />
+https://onlineyamltools.com/convert-yaml-to-json</p>
+<p>1. Convert the VPN0 YML content from the vmanage-templates.yml file into JSON, and modify the 5 items listed above.  You’re going to be looking for the ‘BR1-C8000v-VPN0’ template name.  </p>
+<p>The syntax for the variables is: "{{ VARIABLE }}"</p>
+<p>Find the 5 items we wish to templatize and give them a name.  For this first example, we’ve used the following:</p>
+<p>"{{ Template_Name }}"<br />
+"{{ Template_Description }}"<br />
+"{{ DNS_Address }}"<br />
+"{{ Default_Next_Hop_VPN0 }}"<br />
+"{{ Default_Next_Hop_VPN0_Distance }}"  </p>
+<p>Now that we have the YML file converted into a JSON and the values replaced with variable names, we need to create our role directory and add this content into the templates subdirectory.  </p>
+<p>2. Run the following:</p>
+<pre><code>ansible-galaxy init ~/python-viptela/roles/&lt;ROLE NAME&gt;
+</code></pre>
+<p>3. Navigate to the new role you’ve defined and go to the templates subdirectory (it is empty).  Create a j2 file (nano <TEMPLATE_NAME>.j2) and copy/paste the file you’ve been modifying.
+Save/exit (Ctrl+X)</p>
+<p>4. Now that we have the template we need to tell the role WHAT to do, should the role be called.  Navigate to ‘tasks.’
+We can see that a value already exists here, called main.yml.  Should we have a need for multiple tasks, main.yml is executed sequentially.  If you perform at ‘more main.yml’ you’ll see that this file is currently empty.  We’ll create two tasks, then reference them within main.yml by importing them.<br />
+render_vpn0_template.yml
+post_vpn0_template.yml  </p>
+<p>5. Create the following files within the tasks directory.
+Let’s cover &amp; modify the render_vpn0_template.yml task first.<br />
+This task does nothing more than create a JSON file from the j2 template that we created previously.  What’s different is that this JSON file will include the values created from any variables passed when this role is called.  </p>
+<pre><code>- name: Clean Previously Rendered Templates
+  file:
+    path: &quot;{{item}}&quot;
+    state: absent
+    force: true
+  with_fileglob:
+    - &quot;{{role_path}}/files/*&quot;
+
+- name: Render VPN0 Template
+  template: src=&quot;&lt;Template Name&gt;”.j2&quot; dest={{role_path}}/files/{{ Template_Name }}.json
+</code></pre>
+<p>This file specifically references the j2 template that you’ve created-so make sure you specify the correct name.  It then creates the JSON file in the directory ‘files’ within this specific role.  Lastly, because this playbook may be run more than once, it replaces any existing files with the newly created one on each playbook execution.  </p>
+<p>6. Lets navigate back to the main.yml and import this task:</p>
+<pre><code>- import_tasks: render_vpn0_template.yml
+</code></pre>
+<p>Now that we have the task to CREATE the JSON file…we need a task to do a URI POST, using the JSON file created previously within the body of our message.  </p>
+<p>7. Create another yml file within the tasks directory, calling this one post_vpn0_template.yml:</p>
+<pre><code>- name: Post VPN0 Template
+  uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/template/feature
+    method: POST
+    return_content: yes
+    validate_certs: no
+    body: &quot;{{lookup('file', '{{item}}')}}&quot;
+    body_format: json
+    headers:
+      Cookie: &quot;{{ login.cookies_string }}&quot;
+      X-XSRF-TOKEN:  &quot;{{ cookie_output.content }}&quot;
+      Content-Type: &quot;application/json&quot;
+  with_fileglob:
+    - &quot;{{ role_path }}/files/*.json&quot;
+</code></pre>
+<p>Like before, we now need to modify our main.yml file to call the post task.  </p>
+<p>8. Add the following to the main.yml file, after the render import:</p>
+<pre><code>- import_tasks: post_vpn0_template.yml
+</code></pre>
+<p>If we’ve followed the above steps correctly, our main.yml should look something like this:</p>
+<pre><code>dcloud@dcloud-virtual-machine:~/python-viptela/roles/create_vpn0_template/tasks$ more main.yml
+- import_tasks: render_vpn0_template.yml
+- import_tasks: post_vpn0_template.yml
+</code></pre>
+<p>To recap, the above steps:<br />
+1.  Created the role<br />
+2.  Created the j2 template, from the vmanage-templates.yml ‘dump’<br />
+3.  Created the tasks render &amp; post  </p>
+<p>We are now ready to create a playbook that will leverage the role!    </p>
+<p>9. Create a new YML file called “12_Deploy_Feature_VPN0_Template.yml”  </p>
+<pre><code>- name: Deploy Feature VPN0 Template
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars_files:
+   - /home/dcloud/python-viptela/external_vars.yml
+  roles:
+    -  role: login
+       tags: CL-2001,CL-2001:login
+    -  role: create_vpn0_template
+       tags: CL-2001,CL-2001:create
+       vars:
+         - Template_Name: 'CL-BR-C8000v-VPN0'
+         - Template_Description: 'VPN0 Template for the On-Prem C8000v'
+         - DNS_Address: '198.18.1.1'
+         - Default_Next_Hop_VPN0: '198.19.2.1'
+         - Default_Next_Hop_VPN0_Distance: '1'    
+</code></pre>
+<p>Hopefully the explanation in the previous steps make this playbook’s purpose obvious, but from a high-level we’re calling the role ‘login’ to generate a cookie &amp; XSRF token then the role ‘create_vpn0_template’ and passing a number of variables to the j2 template within that role.  </p>
+<p>10.    Execute this playbook.
+(If it wasn’t the obvious, you now have a new feature template).</p>
 
 
 

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../sc_2_validation/">
+        <link rel="prev" href="../sc1_t7/">
       
       
-        <link rel="next" href="../appendix/">
+        <link rel="next" href="../sc1_recap/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Continue Your Education - LTRXAR</title>
+        <title>Task 8 - LTRXAR</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#continue-your-education" class="md-skip">
+        <a href="#task-8-attach-device-template" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continue Your Education
+              Task 8
             
           </span>
         </div>
@@ -258,14 +258,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -274,7 +276,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Scenario 1
@@ -397,11 +399,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../sc1_t8/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Task 8
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-8-attach-device-template" class="md-nav__link">
+    Task 8: Attach Device Template
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -496,21 +535,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
         Continue Your Education
       </a>
-      
     </li>
   
 
@@ -547,8 +576,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-8-attach-device-template" class="md-nav__link">
+    Task 8: Attach Device Template
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -563,17 +605,34 @@
                   
 
 
-<h1 id="continue-your-education">Continue your education!</h1>
-<p>BRKXAR-1000: Creating an Application-Optimized Secure Access Service Edge (SASE)-Enabled Architecture<br />
-Kyle Barnes<br />
-BRKXAR-2005: Segmentation Simplified: A Case Study of Meraki Adaptive Policy and Cisco TrustSec<br />
-Praveen Poojary <br />
-BRKXAR-2015: Extend the Enterprise to the Cloud: AWS Cloud integration with Enterprise SD-WAN<br />
-Praveen Poojary<br />
-LABDEV-1102: Secure-X Orchestrator (SXO) - Manifest simplicity and efficiency via automation<br />
-Navin Suvarna<br />
-LABDEV-2007: NSO - Developing Python and Template-Based Service<br />
-Navin Suvarna  </p>
+  <h1>Task 8</h1>
+
+<h2 id="task-8-attach-device-template">Task 8: Attach Device Template</h2>
+<p>1. Create a new yml file called ‘19_Attach_Device_Template.yml’</p>
+<pre><code>- name: Attach Device Template
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars_files:
+   - /home/dcloud/python-viptela/external_vars.yml
+  roles:
+    -  role: login
+       tags: CL-2001,CL-2001:login
+    -  role: attach_device_template
+       tags: lab2:attach
+       vars:
+           DeviceTemplateList:
+             CL-BR1-C8000v:
+               - csv-deviceIP: 1.1.1.101
+                 csv-deviceId: C8K-16AAD483-F5EC-AB00-465A-EDBA673652B7
+                 csv-host-name: CL-BR1-CEDGE8Kv-TEST
+                 //system/host-name: CL-BR1-CEDGE8Kv-TEST
+                 //system/site-id: 10
+                 //system/system-ip: 1.1.1.101
+           Change: false
+</code></pre>
+<p>Note: We may need to modify the csv-deviceId value with an 8000v from your pod.  An available UUID can be found in Configuration&gt;Devices.</p>
+<p>2. Execute this playbook.</p>
 
 
 

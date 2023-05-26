@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../sc_2_validation/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../appendix/">
+        <link rel="next" href="../sc_1_desc/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Continue Your Education - LTRXAR</title>
+        <title>Environment Setup - LTRXAR</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#continue-your-education" class="md-skip">
+        <a href="#task-1-environment-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continue Your Education
+              Environment Setup
             
           </span>
         </div>
@@ -195,14 +195,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -211,7 +213,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Introduction
@@ -236,11 +238,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../env_setup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Environment Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Environment Setup
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-environment-setup" class="md-nav__link">
+    Task 1: Environment Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -496,21 +535,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
         Continue Your Education
       </a>
-      
     </li>
   
 
@@ -547,8 +576,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-environment-setup" class="md-nav__link">
+    Task 1: Environment Setup
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -563,17 +605,54 @@
                   
 
 
-<h1 id="continue-your-education">Continue your education!</h1>
-<p>BRKXAR-1000: Creating an Application-Optimized Secure Access Service Edge (SASE)-Enabled Architecture<br />
-Kyle Barnes<br />
-BRKXAR-2005: Segmentation Simplified: A Case Study of Meraki Adaptive Policy and Cisco TrustSec<br />
-Praveen Poojary <br />
-BRKXAR-2015: Extend the Enterprise to the Cloud: AWS Cloud integration with Enterprise SD-WAN<br />
-Praveen Poojary<br />
-LABDEV-1102: Secure-X Orchestrator (SXO) - Manifest simplicity and efficiency via automation<br />
-Navin Suvarna<br />
-LABDEV-2007: NSO - Developing Python and Template-Based Service<br />
-Navin Suvarna  </p>
+  <h1>Environment Setup</h1>
+
+<h2 id="task-1-environment-setup">Task 1: Environment Setup</h2>
+<ol>
+<li>Create a notepad that will have the following information that you’ll be working to fill out throughout this lab.<br />
+vManage IP:
+vManage Username:
+vManage Password:
+AWS Access Key:
+AWS Secret Key:
+8000v UUID1: (To be used for Scenario 2)
+8000v UUID2: (To be used for Scenario 2)
+8000v UUID3: (To be used for Scenario 1)
+VPC 1 ID: 
+VPC 2 ID:</li>
+<li>Connect to the Ubuntu host via the VM console (or PuTTY).  </li>
+<li>
+<p>Review the Cisco Viptela vManage Python SDK/CLI/Ansible repo in the /home/dcloud directory.
+Note: This has already been installed, but the process of installation was simple</p>
+<p><code>cd home/dcloud
+pip install viptela</code></p>
+</li>
+<li>
+<p>Navigate to the python-viptela directory</p>
+</li>
+<li>Verify Ansible is installed with <strong>ansible –version</strong>
+<img alt="Screenshot" src="../img/env_setup_1.png" /></li>
+<li>Modify the hosts file.  The default location for this file is /etc/ansible/hosts.<br />
+<strong>[vmanage]</strong><br />
+&lt; VMANAGE IP &gt;  </li>
+</ol>
+<p>Note: This is as bare-bones as one could possibly create a host file.  For the purpose of education, the host file format is most commonly in either  INI or YAML.  This host file allows Ansible playbooks to be executed hierarchically, with nested parent/child groups, and with specific variables associated to a host or group(s) of hosts.</p>
+<pre><code>[webservers]
+foo.example.com
+bar.example.com
+
+[dbservers]
+one.example.com
+two.example.com
+three.example.com
+</code></pre>
+<p>7. Open your windows jumphost via remote desktop 
+<img alt="Screenshot" src="../img/env_setup_2.png" /></p>
+<p>8. Provision AWS credentials</p>
+<p><img alt="Screenshot" src="../img/env_setup_3.png" /></p>
+<p>(Double-click the Launch shortcut)</p>
+<p>9.  Request AWS account (this takes a couple of minutes, so let’s get this knocked out)
+<img alt="Screenshot" src="../img/env_setup_4.png" /></p>
 
 
 

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../sc_2_validation/">
+        <link rel="prev" href="../env_setup/">
       
       
-        <link rel="next" href="../appendix/">
+        <link rel="next" href="../sc1_t1/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Continue Your Education - LTRXAR</title>
+        <title>Description - LTRXAR</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#continue-your-education" class="md-skip">
+        <a href="#scenario-1" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continue Your Education
+              Description
             
           </span>
         </div>
@@ -258,14 +258,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -274,7 +276,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Scenario 1
@@ -285,11 +287,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../sc_1_desc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Description
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Description
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-1" class="md-nav__link">
+    Scenario 1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -496,21 +535,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
         Continue Your Education
       </a>
-      
     </li>
   
 
@@ -547,8 +576,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-1" class="md-nav__link">
+    Scenario 1
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -563,17 +605,19 @@
                   
 
 
-<h1 id="continue-your-education">Continue your education!</h1>
-<p>BRKXAR-1000: Creating an Application-Optimized Secure Access Service Edge (SASE)-Enabled Architecture<br />
-Kyle Barnes<br />
-BRKXAR-2005: Segmentation Simplified: A Case Study of Meraki Adaptive Policy and Cisco TrustSec<br />
-Praveen Poojary <br />
-BRKXAR-2015: Extend the Enterprise to the Cloud: AWS Cloud integration with Enterprise SD-WAN<br />
-Praveen Poojary<br />
-LABDEV-1102: Secure-X Orchestrator (SXO) - Manifest simplicity and efficiency via automation<br />
-Navin Suvarna<br />
-LABDEV-2007: NSO - Developing Python and Template-Based Service<br />
-Navin Suvarna  </p>
+  <h1>Description</h1>
+
+<h2 id="scenario-1">Scenario 1</h2>
+<p>As described in the previous section, Configuration management in SD-WAN is performed with Feature and device templates. Think of a feature template as a small piece of a puzzle that describes the configuration of a given feature, such as a Banner, VPN, or BGP. The feature template renders the configuration into the CLI.
+After you create the feature templates, you can merge them together into a device template. A device template represents a target design of a given branch. For example, you need a device template for single-homed branches, one for dual-homed ones, another for branches that leverage routing protocols, and more.
+In Section1, you will automatically provision a vEdge. To do that, you need to create a set of feature templates, merge those feature templates into a device template and subsequently attach the device-template to the vEdge. <br />
+To begin, you are going to create these feature templates:<br />
+•   VPN0 Template<br />
+•   VPN512 Template<br />
+•   VPN10 Template (Service VPN)<br />
+•   VPN0 Interface Template<br />
+•   VPN512 Interface Template<br />
+•   VPN10 Interface Template (Service VPN)  </p>
 
 
 
