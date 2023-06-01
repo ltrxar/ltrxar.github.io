@@ -1,0 +1,1353 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sc2_task2/">
+      
+      
+        <link rel="next" href="../sc2_task4/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Task 3 - LTRXAR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task3-deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LTRXAR" class="md-header__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LTRXAR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LTRXAR" class="md-nav__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LTRXAR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Lab Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lab Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About This Lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../env_setup/" class="md-nav__link">
+        Environment Setup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Introduction to Key Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction to Key Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../key_concepts/" class="md-nav__link">
+        Key Concepts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../temp_exp/" class="md-nav__link">
+        Task 1: Template Export(Demonstration)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../temp_dump/" class="md-nav__link">
+        Task 2: Template Export(Template Dump)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Scenario 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Scenario 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc_1_desc/" class="md-nav__link">
+        Description
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t3/" class="md-nav__link">
+        Task 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t4/" class="md-nav__link">
+        Task 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t5/" class="md-nav__link">
+        Task 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t6/" class="md-nav__link">
+        Task 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t7/" class="md-nav__link">
+        Task 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_t8/" class="md-nav__link">
+        Task 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc1_recap/" class="md-nav__link">
+        Recap
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Scenario 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Scenario 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc2_desc/" class="md-nav__link">
+        Description
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc2_task1/" class="md-nav__link">
+        Task 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc2_task2/" class="md-nav__link">
+        Task 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Task 3
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task3-deployment" class="md-nav__link">
+    Task3: Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Task3: Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task31-associate-cloud-account" class="md-nav__link">
+    Task3.1: Associate Cloud account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task32-cloud-global-settings" class="md-nav__link">
+    Task3.2: Cloud global settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task33-discover-host-private-networks" class="md-nav__link">
+    Task3.3: Discover Host Private Networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task34-tag-aws-host-vpcs" class="md-nav__link">
+    Task3.4: Tag AWS Host VPCs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task35-create-cloud-gateway" class="md-nav__link">
+    Task3.5: Create Cloud Gateway
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task36-manage-intent" class="md-nav__link">
+    Task3.6: Manage Intent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc2_task4/" class="md-nav__link">
+        Task 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sc_2_cont_edu/" class="md-nav__link">
+        Continue Your Education
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        Linux Commands
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task3-deployment" class="md-nav__link">
+    Task3: Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Task3: Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task31-associate-cloud-account" class="md-nav__link">
+    Task3.1: Associate Cloud account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task32-cloud-global-settings" class="md-nav__link">
+    Task3.2: Cloud global settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task33-discover-host-private-networks" class="md-nav__link">
+    Task3.3: Discover Host Private Networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task34-tag-aws-host-vpcs" class="md-nav__link">
+    Task3.4: Tag AWS Host VPCs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task35-create-cloud-gateway" class="md-nav__link">
+    Task3.5: Create Cloud Gateway
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task36-manage-intent" class="md-nav__link">
+    Task3.6: Manage Intent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Task 3</h1>
+
+<h2 id="task3-deployment">Task3: Deployment</h2>
+<p>We’re going to be creating multiple ansible playbooks.  Each playbook will perform a step in the process.  You’ll see the syntax for each of the playbooks have a similar beginning:</p>
+<p>•   Hosts: Uses the host file to determine where to run the play against.  We only have the IP address associated with vManage there.  </p>
+<p>•   Gather_facts: This is time saving step.  We do not need to gather any information on the hosts in which the plays are run against so we skip those.  </p>
+<p>•   Connection: A normal Ansible play would use SSH and deploy a python script onto the host to execute.  Since we are executing this on the Ansible control node we need to specify local.  </p>
+<p>•   Vars_files: In this space we must associate our pod specifics.  Any variables unique to a pod will go here!    </p>
+<p>•   Get Cookie task: Before we can use any of the vManage APIs we first need to request a cookie (supplying the username/password).  We’ll use this cookie as a header in the subsequent API requests.  </p>
+<p>•   Get XSRF token task: Like the cookie, we’ll need an XSRF token, or cross-site request forgery prevention token, which is required for most POST operations.  This will also be used as a header in the POST requests.   </p>
+<p>•   The ‘register’ keyword stores the value of the specific task to be used in later tasks.  Since registered variables are stored in memory, it’s not possible to use them in future plays, and they are only available for the current playbook run  </p>
+<h3 id="task31-associate-cloud-account">Task3.1: Associate Cloud account</h3>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”. </p>
+<p>2. Create playbook called “1_Apply_AWS_Credentials.yml” within the /home/dcloud/python-viptela   directory.  Using nano as our text editor, the syntax is “nano 1_Apply_AWS_Credentials.yml”.  </p>
+<p>3. Copy/paste the following:  </p>
+<pre><code>- name: Step 1; Apply AWS credentials
+hosts: vmanage
+gather_facts: no
+connection: local
+#ALL YOUR POD/AWS SPECIFICS GO HERE#
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+tasks:
+- name: Get Cookies
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/j_security_check
+    method: POST
+    body_format: form-urlencoded
+    validate_certs: False
+    body:
+        j_username: "{{ USERNAME }}"
+        j_password: "{{ PASSWORD }}"
+    register: login
+- name: Output Cookie Info
+    ansible.builtin.debug:
+    var: login.cookies
+- name: Get XSRF
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/client/token
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+    register: cookie_output
+- name: Cookie Output
+    ansible.builtin.debug:
+    var: cookie_output.content
+###########################################################################
+- name: Apply info
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/accounts
+    method: POST
+    body_format: json
+    body: "{\"cloudType\":\"AWS\",\"accountName\":\"{{AWS_Account_Name}}\",\"description\":\"{{Description}}\",\"awsKeyCredentials\":{\"apiKey\":\"{{AWS_Access_KEY}}\",\"secretKey\":\"{{AWS_Secret_KEY}}\"},\"cloudGatewayEnabled\":\"tru
+e\"}"
+    validate_certs: false
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+</code></pre>
+<p>4. Execute the 1_Apply_AWS_Credentials.yml playbook.<br />
+“Ansible-playbook 1_Apply_AWS_Credentials.yml playbook”   </p>
+<p>We can save this file and run it to validate that there are no issues found.  The syntax to run the playbook is ‘ansible-playbook <file.yaml>’.  If we run the playbook as-is we should see something like the following:  </p>
+<p>5. Verify  </p>
+<p><img alt="Screenshot" src="../img/Picture120.png" />  </p>
+<p>(Sorry for the small text, but green is good)</p>
+<p>What we can see here is that we’re making a POST method call, with our cookie and XSRF token from earlier with a bunch of mess in the body format.  This is a JSON text string of the following:  </p>
+<pre><code>{
+    "cloudType": "AWS",
+    "accountName": "&lt;whatever you have in your variable file&gt;",
+    "description": "&lt;whatever you have in your variable file&gt;",
+    "awsKeyCredentials": {
+    "apiKey": "&lt;whatever you have in your variable file&gt;",
+    "secretKey": "&lt;whatever you have in your variable file&gt;"
+    },
+    "cloudGatewayEnabled": "true"
+}
+</code></pre>
+<p>Note: We’re lazy.  You can use a JSON to text string formatter online.  Copy/paste from the API documentation and then modify the values.  </p>
+<p>We can confirm in the GUI if the account settings have been applied  </p>
+<p><img alt="Screenshot" src="../img/Picture122.png" />  </p>
+<p>Again, sorry for the small text, but validate in the Cloud Account Management section-it may require a refresh.  </p>
+<h3 id="task32-cloud-global-settings">Task3.2: Cloud global settings</h3>
+<p>Note: Understanding the product ID will be required for the global settings API.      </p>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”.  </p>
+<p>2. Create playbook called “2_Apply_Global_Configs.yml” within the /home/dcloud/python-viptela  directory.  Using nano as our text editor, the syntax is “nano 2_Apply_Global_Configs.yml”.  </p>
+<p>3. Copy/paste the following:  </p>
+<pre><code>    - name: Step 2; Apply Global Settings
+    hosts: vmanage
+    gather_facts: no
+    connection: local
+        #ALL YOUR POD/AWS SPECIFICS GO HERE#
+    vars_files:
+    - /home/dcloud/python-viptela/external_vars.yml
+    tasks:
+    - name: Get Cookies
+        ansible.builtin.uri:
+        url: https://{{ VMANAGE_IP }}/j_security_check
+        method: POST
+        body_format: form-urlencoded
+        validate_certs: False
+        body:
+            j_username: "{{ USERNAME }}"
+            j_password: "{{ PASSWORD }}"
+        register: login
+    - name: Output Cookie Info
+        ansible.builtin.debug:
+        var: login.cookies
+    - name: Get XSRF
+        ansible.builtin.uri:
+        url: https://{{ VMANAGE_IP }}/dataservice/client/token
+        method: GET
+        body_format: json
+        validate_certs: False
+        return_content: true
+        headers:
+            Cookie: "{{ login.cookies_string }}"
+        register: cookie_output
+    - name: Cookie Output
+        ansible.builtin.debug:
+        var: cookie_output.content
+    ##################################################################################
+    - name: Apply Global Settings
+        ansible.builtin.uri:
+        url: https://{{ VMANAGE_IP }}/dataservice/multicloud/settings/global
+        method: POST
+        body_format: json
+        body: "{\"cloudGatewaySolution\":\"tgw_tvpc\",\"cloudType\":\"AWS\",\"name\":\"{{AWS_Account_Name}}\",\"enableAutoCorrect\":true,\"enablePeriodicAudit\":true,\"softwareImageId\":\"Cisco-C8K-17.09.02a-42cb6e93-8d9d-490b-a73c-e3e56077ffd1\",\"instanceSize\":\"t3.medium\",\"intraTagComm\":true,\"ipSubnetPool\":\"192.168.100.0/24\",\"accountId\":\"{{AWS_Account_ID}}\",\"cgwBgpAsnOffset\":64520,\"mapTvpc\":true,\"programDefaultRoute\":true,\"region\":\"us-east-1\",\"tunnelType\":\"ipsec\"}"
+        validate_certs: false
+        headers:
+            Cookie: "{{ login.cookies_string }}"
+            X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+</code></pre>
+<p>4. Execute the 2_Apply_Global_Configs.yml playbook.    </p>
+<p>“Ansible-playbook 2_Apply_Global_Configs.yml”   </p>
+<p>5. Verify  </p>
+<p>Did we see all green?  Verify in the vManage GUI global settings section!  </p>
+<p><img alt="Screenshot" src="../img/Picture130.png" /> </p>
+<h3 id="task33-discover-host-private-networks">Task3.3: Discover Host Private Networks</h3>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”.  </p>
+<p>2. Create playbook called “3_Discover_AWS_Host_VPCs.yml” within the /home/dcloud/python-viptela directory.  Using nano as our text editor, the syntax is “nano 3_Discover_AWS_Host_VPCs.yml”.<br />
+3. Copy/paste the following:  </p>
+<pre><code>- name: Step 3; Discover AWS Host VPCs
+hosts: vmanage
+gather_facts: no
+connection: local
+#ALL YOUR POD/AWS SPECIFICS GO HERE#
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+tasks:
+- name: Get Cookies
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/j_security_check
+    method: POST
+    body_format: form-urlencoded
+    validate_certs: False
+    body:
+        j_username: "{{ USERNAME }}"
+        j_password: "{{ PASSWORD }}"
+    register: login
+- name: Output Cookie Info
+    ansible.builtin.debug:
+    var: login.cookies
+- name: Get XSRF
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/client/token
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+    register: cookie_output
+- name: Cookie Output
+    ansible.builtin.debug:
+    var: cookie_output.content
+##################################################################################
+- name: Get Host VPCs
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/hostvpc?cloudType=AWS
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+    register: VPC
+- name: Output VPCs
+    ansible.builtin.debug:
+    var: VPC.json.data
+- name: Save
+    ansible.builtin.copy:
+    content: "{{ VPC.json.data }}"
+    dest: /home/dcloud/python-viptela/dest_file.json
+</code></pre>
+<p>4. Execute the playbook 3_Discover_AWS_Host_VPCs.yml  </p>
+<p>“Ansible-playbook 3_Discover_AWS_Host_VPCs.yml” </p>
+<p>5. Verify  </p>
+<p><img alt="Screenshot" src="../img/Picture140.png" /> </p>
+<p>6. Take the VPC IDs and add the values to your external_vars.yml file.   </p>
+<p>“Cd /home/dcloud/python-viptela”  </p>
+<p>“Nano external_vars.yml”  </p>
+<p><img alt="Screenshot" src="../img/Picture141.png" />   </p>
+<p>Verifying in the GUI, we should see the same output.  </p>
+<h3 id="task34-tag-aws-host-vpcs">Task3.4: Tag AWS Host VPCs</h3>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”.  </p>
+<p>2. Create playbook called “4_Tag_RED_BLUE_Host_VPCs.yml” within the /home/dcloud/python-viptela directory.  Using nano as our text editor, the syntax is “nano 4_Tag_RED_BLUE_Host_VPCs.yml”.  </p>
+<p>3. Copy/paste the following:  </p>
+<pre><code>- name: Step 4; Tag AWS Host VPCs
+hosts: vmanage
+gather_facts: no
+connection: local
+#ALL YOUR POD/AWS SPECIFICS GO HERE#
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+vars:
+    jsondata: "{{ lookup('file', 'dest_file.json') | from_json }}"
+tasks:
+- name: Get Cookies
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/j_security_check
+    method: POST
+    body_format: form-urlencoded
+    validate_certs: False
+    body:
+        j_username: "{{ USERNAME }}"
+        j_password: "{{ PASSWORD }}"
+    register: login
+- name: Output Cookie Info
+    ansible.builtin.debug:
+    var: login.cookies
+- name: Get XSRF
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/client/token
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+    register: cookie_output
+- name: Cookie Output
+    ansible.builtin.debug:
+    var: cookie_output.content
+###########################################################################
+- name: RED VPC
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/hostvpc/tags?cloudType=AWS
+    method: POST
+    body_format: json
+    body: "{\"tagName\":\"Red\",\"interconnectTag\":false,\"hostVpcs\":[{\"accountId\":\"{{ AWS_Account_ID }}\",\"accountName\":\"{{ AWS_Account_Name }}\",\"region\":\"us-east-1\",\"cloudType\":\"AWS\",\"hostVpcId\":\"{{Host_VPC_1_ID}}
+\",\"hostVpcName\":\"test-vpc-1\"}]}"
+    validate_certs: false
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+- name: Print
+    ansible.builtin.debug:
+    msg: "VPC {{Host_VPC_1_ID}} given the tag of Red"
+- name: Sleep for 15 seconds and continue with play
+    ansible.builtin.wait_for:
+    timeout: 15
+    delegate_to: localhost
+- name: BLUE VPC
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/hostvpc/tags?cloudType=AWS
+    method: POST
+    body_format: json
+    body: "{\"tagName\":\"Blue\",\"interconnectTag\":false,\"hostVpcs\":[{\"accountId\":\"{{ AWS_Account_ID }}\",\"accountName\":\"{{ AWS_Account_Name }}\",\"region\":\"us-east-1\",\"cloudType\":\"AWS\",\"hostVpcId\":\"{{Host_VPC_2_ID}
+}\",\"hostVpcName\":\"test-vpc-2\"}]}"
+    validate_certs: false
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+- name: Print
+    ansible.builtin.debug:
+    msg: "VPC {{Host_VPC_2_ID}} given the tag of Blue"
+</code></pre>
+<p>4. Execute the 4_Tag_RED_BLUE_Host_VPCs.yml playbook  </p>
+<p>“Ansible-playbook 4_Tag_RED_BLUE_Host_VPCs.yml”  </p>
+<p>5. Verify  </p>
+<p><img alt="Screenshot" src="../img/Picture150.png" /><br />
+<img alt="Screenshot" src="../img/Picture151.png" /></p>
+<p>Note: One thing you may note is the ansible.builtin.wait_for module.  This is a module to delay the subsequent task for a defined amount of time.  We’ve specified a wait of 15 seconds as you’d otherwise get an error trying to apply the Blue tag until the Red tag application is complete.   </p>
+<p><img alt="Screenshot" src="../img/Picture152.png" /></p>
+<h3 id="task35-create-cloud-gateway">Task3.5: Create Cloud Gateway</h3>
+<p>Note: This step takes a few minutes to deploy.    </p>
+<p>Before we can deploy our cloud routers, we first need to associate a template.  We’ll be using the default device template ‘AWS-cat8kv-multicloud.’  As mentioned in the section prior, this is done in the GUI at Configuration&gt;Templates&gt;Device Templates.    </p>
+<p>But…we’re doing this in ansible.  Recall task 8 from scenario 1-we’re going to use the same role.  We have a playbook called ‘5a_Attach_AWS_Template.yml’ which should look very similar to ‘19_Attach_Device_Template.yml.’  The main difference being the addition of another variable: “/0/GigabitEthernet2//interface/tunnel-interface/color/value: default”</p>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”.  </p>
+<p>2. Create playbook called “5a_Assign_AWS_Template.yml” within the /home/dcloud/python-viptela directory.  Using nano as our text editor, the syntax is “nano 5a_Assign_AWS_Template.yml”.  </p>
+<p>3. Copy/paste the following:  </p>
+<pre><code>- name: Attach AWS Device Template
+hosts: all
+connection: local
+gather_facts: no
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+roles:
+    -  role: login
+    tags: CL-2001,CL-2001:login
+    -  role: attach_device_template
+    tags: lab2:attach
+    vars:
+        DeviceTemplateList:
+            AWS-cat8kv-multicloud:
+            - csv-deviceIP: "-"
+                csv-status: "complete"
+                csv-deviceId:  "{{ UUID_1 }}"
+                csv-host-name: "-"
+                //system/host-name: "AWS1"
+                //system/site-id: "5"
+                //system/system-ip: "2.2.2.1"
+                /0/GigabitEthernet2//interface/tunnel-interface/color/value: "default"
+            - csv-deviceIP: "-"
+                csv-status: "complete"
+                csv-deviceId:  "{{ UUID_2 }}"
+                csv-host-name: "-"
+                //system/host-name: "AWS2"
+                //system/site-id: "5"
+                //system/system-ip: "2.2.2.2"
+                /0/GigabitEthernet2//interface/tunnel-interface/color/value: "default"
+</code></pre>
+<p>Note: In this example we’re going to reference the external_vars.yml file to use the pod-specific UUIDs.   </p>
+<p>4. Execute the 5a_Assign_AWS_Template.yml playbook.  <br />
+“Ansible-playbook 5a_Assign_AWS_Template.yml”   </p>
+<p>5. Verify within the config&gt;devices section of the vManage GUI  </p>
+<p><img alt="Screenshot" src="../img/Picture200.png" />    </p>
+<p>6. Create a yml file called 5_Cloud_Gateway.yml within the /home/dcloud/python-viptela directory.  </p>
+<p>“nano 5_Cloud_Gateway.yml”  </p>
+<p>7. Copy/paste the following:  </p>
+<pre><code>- name: Step 5; Create Cloud Gateway
+hosts: vmanage
+gather_facts: no
+connection: local
+#ALL YOUR POD/AWS SPECIFICS GO HERE#
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+vars:
+    jsondata: "{{ lookup('file', 'dest_file.json') | from_json }}"
+tasks:
+- name: Get Cookies
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/j_security_check
+    method: POST
+    body_format: form-urlencoded
+    validate_certs: False
+    body:
+        j_username: "{{ USERNAME }}"
+        j_password: "{{ PASSWORD }}"
+    register: login
+- name: Output Cookie Info
+    ansible.builtin.debug:
+    var: login.cookies
+- name: Get XSRF
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/client/token
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+    register: cookie_output
+- name: Cookie Output
+    ansible.builtin.debug:
+    var: cookie_output.content
+##################################################################################
+- name: Deploy CGW
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/cloudgateway
+    method: POST
+    body_format: json
+    validate_certs: False
+    body: "{\"accountId\":\"{{AWS_Account_ID}}\",\"cloudType\":\"AWS\",\"region\":\"us-east-1\",\"cloudGatewayName\":\"CL2023_CGW\",\"devices\":[\"{{UUID_1}}\",\"{{UUID_2}}\"],\"description\":\"\"}"
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+    register: results
+</code></pre>
+<p>8. Execute the 5_Cloud_Gateway.yml playbook
+“Ansible-playbook 5_Cloud_Gateway.yml”   </p>
+<p>9. Verify  </p>
+<p>Configuration&gt;Templates  </p>
+<p><img alt="Screenshot" src="../img/Picture201.png" />  </p>
+<p>Note: We can see here that the two cloud routers have the AWS template assigned (attached).  </p>
+<h3 id="task36-manage-intent">Task3.6: Manage Intent</h3>
+<p>1. Navigate to the /home/dcloud/python-viptela directory with “cd /home/dcloud/python-viptela”.  </p>
+<p>2. Create playbook called “6_Manage_Intent.yml” within the /home/dcloud/python-viptela directory.<br />
+  Using nano as our text editor, the syntax is “nano 6_Manage_Intent.yml”.  </p>
+<p>3. Copy/paste the following:  </p>
+<pre><code>- name: Step 6; Manage Intent
+hosts: vmanage
+gather_facts: no
+connection: local
+#ALL YOUR POD/AWS SPECIFICS GO HERE#
+vars_files:
+- /home/dcloud/python-viptela/external_vars.yml
+vars:
+    jsondata: "{{ lookup('file', 'dest_file.json') | from_json }}"
+tasks:
+- name: Get Cookies
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/j_security_check
+    method: POST
+    body_format: form-urlencoded
+    validate_certs: False
+    body:
+        j_username: "{{ USERNAME }}"
+        j_password: "{{ PASSWORD }}"
+    register: login
+- name: Output Cookie Info
+    ansible.builtin.debug:
+    var: login.cookies
+- name: Get XSRF
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/client/token
+    method: GET
+    body_format: json
+    validate_certs: False
+    return_content: true
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+    register: cookie_output
+- name: Cookie Output
+    ansible.builtin.debug:
+    var: cookie_output.content
+##################################################################################
+- name: Manage Intent
+    ansible.builtin.uri:
+    url: https://{{ VMANAGE_IP }}/dataservice/multicloud/map?cloudType=AWS
+    method: POST
+    body_format: json
+    validate_certs: False
+    body: "{\"cloudType\":\"AWS\",\"connMatrix\":[{\"srcType\":\"vpn\",\"srcId\":\"10\",\"conn\":\"enabled\",\"destId\":\"Red\",\"destType\":\"tag\"},{\"srcType\":\"tag\",\"srcId\":\"Red\",\"conn\":\"enabled\",\"destId\":\"10\",\"destT
+ype\":\"vpn\"}]}"
+    headers:
+        Cookie: "{{ login.cookies_string }}"
+        X-XSRF-TOKEN:  "{{ cookie_output.content }}"
+</code></pre>
+<p>4. Execute the 6_Manage_Intent.yml playbook  </p>
+<p>“Ansible-playbook 6_Manage_Intent.yml”  </p>
+<p>5. Verify  </p>
+<p><img alt="Screenshot" src="../img/Picture210.png" /><br />
+<img alt="Screenshot" src="../img/Picture211.png" />  </p>
+<p>Note: AWS cloud operations can take up to 40-60 mins to complete mapping the intent management.  In our experience testing this lab, it takes around 5-10 minutes to get to an ‘all green’ state:  </p>
+<p><img alt="Screenshot" src="../img/Picture212.png" /><br />
+<img alt="Screenshot" src="../img/Picture213.png" />  </p>
+<p>Once you see all green it indicates the TVPC C8000vs are reachable and that there are IPsec tunnels established to the TGW.  Proceed to validation.  </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
