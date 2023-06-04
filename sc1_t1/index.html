@@ -19,7 +19,7 @@
     
     
       
-        <title>Task 1 - LTRXAR</title>
+        <title>Task 1 - LTRXAR-2001</title>
       
     
     
@@ -38,6 +38,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -77,7 +79,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="LTRXAR" class="md-header__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-header__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -90,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            LTRXAR
+            LTRXAR-2001
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -163,13 +165,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="LTRXAR" class="md-nav__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-nav__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    LTRXAR
+    LTRXAR-2001
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -770,7 +772,7 @@
 <li>Default next hop Distance    </li>
 </ol>
 <p>Given we know WHAT we want to modify, we now need to create a J2 template (using the vmanage-templates.yml ‘dump’ created previously in /home/dcloud/python-viptela).  A J2 template is formatted in JSON so we’ll take the template we which to templatize (VPN0) and convert it into JSON.<br />
-https://onlineyamltools.com/convert-yaml-to-json</p>
+<a href="https://onlineyamltools.com/convert-yaml-to-json">https://onlineyamltools.com/convert-yaml-to-json</a></p>
 <p>1. Convert the VPN0 YML content from the vmanage-templates.yml file into JSON, and modify the 5 items listed above. Instead of searching for the ‘BR1-C8000v-VPN0’ within the dump, copy/paste from the lab guide.  </p>
 <p><em>Note: The syntax for the variables is: "{{ VARIABLE }}"</em>  </p>
 <p>The items we want to template are listed here, and indicated in blue within the j2 template</p>
@@ -1035,20 +1037,20 @@ This task does nothing more than create a JSON file from the j2 template that we
 - name: Render VPN0 Template
   template: src=&quot;CL-BR-C8000v-VPN0”.j2&quot; dest={{role_path}}/files/{{ Template_Name }}.json
 </code></pre>
-<p>13.    Exit &amp; save the file (Ctrl-X&gt;Y&gt;Enter)
-14.    Validate the contents of the task file matches the content you pasted from above: “more render_vpn0_template.yml”  </p>
+<p>13.    Exit &amp; save the file <strong>(Ctrl-X&gt;Y&gt;Enter)</strong><br />
+14.    Validate the contents of the task file matches the content you pasted from above: <strong>“more render_vpn0_template.yml”</strong>  </p>
 <p>This file specifically references the j2 template that you’ve created-so make sure you specify the correct name.  It then creates the JSON file in the directory ‘files’ within this specific role.  Lastly, because this playbook may be run more than once, it replaces any existing files with the newly created one on each playbook execution.  </p>
 <p>15.    Navigate back to the main.yml and import this task:<br />
-1. “cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”<br />
-2. “nano main.yml”<br />
+1. <strong>“cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”</strong><br />
+2. <strong>“nano main.yml”</strong><br />
 3. Copy/Paste the following:  </p>
 <pre><code>- import_tasks: render_vpn0_template.yml
 </code></pre>
 <p>Now that we have the task to CREATE the JSON file…we need a task to do a URI POST, using the JSON file created previously (in the /home/dcloud/python-viptela/roles/create_vpn0_template/files directory) within the body of our message.  <br />
 16.     Navigate to the /home/dcloud/python-viptela/roles/create_vpn0_template/tasks directory:<br />
-“cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”<br />
+<strong>“cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”</strong><br />
 17.     Create a new YML file called post_vpn0_template.yml:<br />
-“nano post_vpn0_template.yml”<br />
+<strong>“nano post_vpn0_template.yml”</strong><br />
 18.     Copy/paste the following:  </p>
 <pre><code>- name: Post VPN0 Template
   uri:
@@ -1065,12 +1067,12 @@ This task does nothing more than create a JSON file from the j2 template that we
   with_fileglob:
     - &quot;{{ role_path }}/files/*.json&quot;
 </code></pre>
-<p>19.        Exit &amp; save the file (Ctrl-X&gt;Y&gt;Enter)<br />
-20.        Validate the contents of the task file matches the content you pasted from above: “more post_vpn0_template.yml”<br />
-Like before, we now need to modify our main.yml file to call the post task.  <br />
-21.        Navigate back to the main.yml and import this task, after the render import:<br />
-1.        “cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”<br />
-2.        “nano main.yml”\<br />
+<p>19.        Exit &amp; save the file <strong>(Ctrl-X&gt;Y&gt;Enter)</strong><br />
+20.        Validate the contents of the task file matches the content you pasted from above: <strong>“more post_vpn0_template.yml”</strong> <br />
+Like before, we now need to modify our main.yml file to call the post task. </p>
+<p>21.        Navigate back to the main.yml and import this task, after the render import:<br />
+1.        <strong>“cd /home/dcloud/python-viptela/roles/create_vpn0_template/tasks”</strong><br />
+2.        <strong>“nano main.yml”</strong><br />
 3.        Copy/Paste the following:  </p>
 <pre><code>- import_tasks: post_vpn0_template.yml
 </code></pre>
@@ -1083,11 +1085,11 @@ Like before, we now need to modify our main.yml file to call the post task.  <br
 1. Created the role<br />
 2. Created the j2 template, from the vmanage-templates.yml ‘dump’<br />
 3. Created the tasks render &amp; post  </p>
-<p>We are now ready to create a playbook that will leverage the role!<br />
-23.     Navigate to the home/dcloud/python-viptela directory:
-“cd /home/dcloud/python-viptela”<br />
+<p>We are now ready to create a playbook that will leverage the role!  </p>
+<p>23.     Navigate to the home/dcloud/python-viptela directory:
+<strong>“cd /home/dcloud/python-viptela”</strong><br />
 24.     Create a new YML file called 12_Deploy_Feature_VPN0_Template.yml:
-“nano 12_Deploy_Feature_VPN0_Template.yml”<br />
+<strong>“nano 12_Deploy_Feature_VPN0_Template.yml”</strong><br />
 25.     Copy/paste the following:</p>
 <pre><code>- name: Deploy Feature VPN0 Template
   hosts: all
@@ -1107,10 +1109,10 @@ Like before, we now need to modify our main.yml file to call the post task.  <br
          - Default_Next_Hop_VPN0: '198.19.2.1'
          - Default_Next_Hop_VPN0_Distance: '1'    
 </code></pre>
-<p>26.     Exit &amp; save the file (Ctrl-X&gt;Y&gt;Enter)<br />
-27.    Validate the contents of the playbook matches the content you pasted from above: “more 12_Deploy_Feature_VPN0_Template.yml”<br />
-Hopefully the explanation in the previous steps make this playbook’s purpose obvious, but from a high-level we’re calling the role ‘login’ to generate a cookie &amp; XSRF token then the role ‘create_vpn0_template’ and passing several variables to the j2 template within that role.<br />
-28.    Execute the 12_Deploy_Feature_VPN0_Template.yml playbook:<br />
+<p>26.     Exit &amp; save the file <strong>(Ctrl-X&gt;Y&gt;Enter)</strong><br />
+27.    Validate the contents of the playbook matches the content you pasted from above: <strong>“more 12_Deploy_Feature_VPN0_Template.yml”</strong>  </p>
+<p>Hopefully the explanation in the previous steps make this playbook’s purpose obvious, but from a high-level we’re calling the role ‘login’ to generate a cookie &amp; XSRF token then the role ‘create_vpn0_template’ and passing several variables to the j2 template within that role.  </p>
+<p>28.    Execute the 12_Deploy_Feature_VPN0_Template.yml playbook:<br />
 <strong>“ansible-playbook 12_Deploy_Feature_VPN0_Template.yml”</strong>  <br />
 (If it wasn’t the obvious, you now have a new feature template).<br />
 29.     Verify  </p>
@@ -1133,6 +1135,44 @@ Hopefully the explanation in the previous steps make this playbook’s purpose o
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../sc_1_desc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Description" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Description
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sc1_t2/" class="md-footer__link md-footer__link--next" aria-label="Next: Task 2" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Task 2
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1154,7 +1194,7 @@ Hopefully the explanation in the previous steps make this playbook’s purpose o
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>

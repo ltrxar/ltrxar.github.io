@@ -19,7 +19,7 @@
     
     
       
-        <title>Environment Setup - LTRXAR</title>
+        <title>Environment Setup - LTRXAR-2001</title>
       
     
     
@@ -38,6 +38,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -77,7 +79,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="LTRXAR" class="md-header__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-header__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -90,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            LTRXAR
+            LTRXAR-2001
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -163,13 +165,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="LTRXAR" class="md-nav__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-nav__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    LTRXAR
+    LTRXAR-2001
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -777,24 +779,24 @@ VPC 2 ID: {Captured from Scenario 2}  </p>
 The syntax within Linux to change directory is ‘cd <path>’.<br />
 To determine your current working directory type ‘pwd’ (print working directory). Change directory using ‘cd /home/dcloud/python-viptela’</p>
 <pre><code>  pwd
-  cd home/dcloud/python-viptela 
+  cd /home/dcloud/python-viptela 
 </code></pre>
 <p>Everything present is what is installed by default-minus the LTRXAR-2001 &amp; roles directories.  The LTRXAR-2001 directory includes all of the playbooks that are used-if something isn’t working, and you want to reference.  The roles directory will be used for Scenario 1 (to be explained in more detail within that section).  </p>
 <p><em>Note: This has already been installed, but the process of installation was simple</em></p>
-<pre><code>  cd home/dcloud
+<pre><code>  cd /home/dcloud
   pip install viptela  **Already installed,Do Not Install again**
 </code></pre>
 <p>4. Verify Ansible is installed with <strong>ansible -–version</strong>
 <img alt="Screenshot" src="../img/env_setup_1.png" />
-5. Modify the hosts file.  The default location for this file is /etc/ansible/hosts.  </p>
-<p>1.        Change directory to /etc/ansible: “cd /etc/ansible”    <br />
-2.        Modify the host file: “nano hosts” <br />
+5. Modify the hosts file.  The default location for this file is <strong>/etc/ansible/hosts</strong> .  </p>
+<p>1.        Change directory to /etc/ansible: <strong>“cd /etc/ansible”</strong>    <br />
+2.        Modify the host file: <strong>“nano hosts”</strong> <br />
 3.        Copy/Paste the following:  </p>
 <pre><code>  [vmanage]  
   198.18.133.10  
 </code></pre>
-<p>4.        Exit &amp; save the file using Ctrl+X &gt; Y &gt; Enter<br />
-5.        Validate the contents of hosts file using: “more hosts”. Ensure that the host information for vmanage is configured with the IP address.  </p>
+<p>4.        Exit &amp; save the file using <strong>Ctrl+X &gt; Y &gt; Enter</strong><br />
+5.        Validate the contents of hosts file using: <strong>“more hosts”</strong>. Ensure that the host information for vmanage is configured with the IP address.  </p>
 <p>Note: This is as bare-bones as one could possibly create a host file.  For the purpose of education, the host file format is most commonly in either  INI or YAML.  This host file allows Ansible playbooks to be executed hierarchically, with nested parent/child groups, and with specific variables associated to a host or group(s) of hosts.</p>
 <pre><code>[webservers]
 foo.example.com
@@ -832,6 +834,44 @@ three.example.com
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About This Lab" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                About This Lab
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../key_concepts/" class="md-footer__link md-footer__link--next" aria-label="Next: Key Concepts" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Key Concepts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -853,7 +893,7 @@ three.example.com
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>

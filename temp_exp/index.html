@@ -19,7 +19,7 @@
     
     
       
-        <title>Task 1: Template Export(Demonstration) - LTRXAR</title>
+        <title>Task 1: Template Export(Demonstration) - LTRXAR-2001</title>
       
     
     
@@ -38,6 +38,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -72,7 +74,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="LTRXAR" class="md-header__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-header__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -85,7 +87,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            LTRXAR
+            LTRXAR-2001
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -158,13 +160,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="LTRXAR" class="md-nav__button md-logo" aria-label="LTRXAR" data-md-component="logo">
+    <a href=".." title="LTRXAR-2001" class="md-nav__button md-logo" aria-label="LTRXAR-2001" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    LTRXAR
+    LTRXAR-2001
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -712,17 +714,19 @@
   <h1>Task 1: Template Export(Demonstration)</h1>
 
 <p>The first playbook we’ll create uses the ansible URI module to invoke an API call to vManage. The main API used here is the <strong>/dataservice/template/feature</strong> API.<br />
-The /dataservice/ part of the URL represents the API entry point. The remainder, /template/feature/, identifies the resource that you are going to manipulate; in this case, feature templates.
-The methods that you are can use to manipulate feature template are:<br />
-- GET: Retrieves information from the system.<br />
-- POST: Creates a new object (in this case, a new feature template).<br />
-- PUT: Modifies an existing object.<br />
-- DELETE: Deletes an existing object.    </p>
-<p>The default output on a GET operation for /dataservice/template/feature API is a JSON formatted list of the various feature templates. The playbook however cycles through the json data and combines the feature template name &amp; feature template ID into a key/value pair.  These values are stored into a local variable called feature_template_db which is then printed.    </p>
+The /dataservice/ part of the URL represents the API entry point. The remainder, /template/feature/, identifies the resource that you are going to manipulate; in this case, feature templates.  </p>
+<p>The methods that you are can use to manipulate feature template are:  </p>
+<ul>
+<li>GET: Retrieves information from the system.  </li>
+<li>POST: Creates a new object (in this case, a new feature template).  </li>
+<li>PUT: Modifies an existing object.  </li>
+<li>DELETE: Deletes an existing object.    </li>
+</ul>
+<p>The default output on a GET operation for /dataservice/template/feature API is a JSON formatted list of the various feature templates. The playbook however cycles through the json data and combines the feature template name &amp; feature template ID into a key/value pair.  These values are stored into a local variable called <strong>feature_template_db</strong> which is then printed.    </p>
 <p><img alt="Screenshot" src="../img/template_export_1.png" /></p>
-<p>1.        Change directory to /home/dcloud/python-viptela: “cd /home/dcloud/python-viptela”<br />
+<p>1.        Change directory to /home/dcloud/python-viptela: <strong>“cd /home/dcloud/python-viptela”</strong><br />
 2.        Create a new YML file called 10_Export_Feature_Templates.yml:<br />
-          “nano 10_Export_Feature_Templates.yml”<br />
+<strong>“nano 10_Export_Feature_Templates.yml”</strong><br />
 3.        Copy/Paste the following:  </p>
 <pre><code>- name: Export vManage Template
   hosts: vmanage
@@ -781,14 +785,14 @@ The methods that you are can use to manipulate feature template are:<br />
       msg: &quot;{{ feature_template_db }}&quot;
 </code></pre>
 <p><em>Note: This playbook will only be run for demonstration purposes and is not used in the subsequent sections.</em>  </p>
-<p>4. Exit &amp; save the file (Ctrl-X&gt;Y&gt;Enter) <br />
+<p>4. Exit &amp; save the file <strong>(Ctrl-X&gt;Y&gt;Enter)</strong> <br />
 5.        Validate the contents of the playbook matches the content you pasted from above: 
-           “more 10_Export_Feature_Templates.yml” <br />
+           <strong>“more 10_Export_Feature_Templates.yml”</strong> <br />
 6.        Execute the 10_Export_Feature_Templates.yml playbook: <br />
-           “ansible-playbook 10_Export_Feature_Templates.yml”<br />
+<strong>“ansible-playbook 10_Export_Feature_Templates.yml”</strong><br />
 7.        Verify the output with the following screenshot:  </p>
 <p><img alt="Screenshot" src="../img/template_export_2.png" /></p>
-<p><strong>But wait?</strong>  What is the mess above the “<strong><em>*</em></strong><strong><em>*</em></strong><em><em>” line in playbook 10?  You’ll see this in differing flavours throughout this lab guide but the principal behind this is that before we can do </em>anything</em> using APIs we need to 1) authenticate (get a cookie) and  2) generate an XSRF token, using the cookie.  Between scenario 1 and 2 you’ll see this done in varying ways-using a role and/or part of the Ansible playbook.  The former option allows for cleaner, more concise Ansible playbook construction.  Regardless, URI calls to the vManage APIs are how we perform most (all) of the steps throughout this lab guide.   </p>
+<p><strong>But wait?</strong>  What is the mess above the “****************” line in playbook 10?  You’ll see this in differing flavours throughout this lab guide but the principal behind this is that before we can do <em>anything</em> using APIs we need to 1) authenticate (get a cookie) and  2) generate an XSRF token, using the cookie.  Between scenario 1 and 2 you’ll see this done in varying ways-using a role and/or part of the Ansible playbook.  The former option allows for cleaner, more concise Ansible playbook construction.  Regardless, URI calls to the vManage APIs are how we perform most (all) of the steps throughout this lab guide.   </p>
 <p>This isn’t <em>always</em> how Ansible is used, though.  Executing these plays locally on the Ansible control node is being performed with the “Connection: local” syntax as the top of the Playbook.  Ansible <em>typically</em> works by connecting to your nodes and pushing out small programs—called modules—to these nodes. Modules are used to accomplish automation tasks in Ansible. These programs are written to be resource models of the desired state of the system. Ansible then executes these modules and removes them when finished.  For automating network devices and other IT appliances where modules cannot be executed, Ansible will run on the control node (i.e. what we’re doing for all of our Ansible plays).  </p>
 
 
@@ -805,6 +809,44 @@ The methods that you are can use to manipulate feature template are:<br />
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../key_concepts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key Concepts" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Key Concepts
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../temp_dump/" class="md-footer__link md-footer__link--next" aria-label="Next: Task 2: Template Export(Template Dump)" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Task 2: Template Export(Template Dump)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -827,7 +869,7 @@ The methods that you are can use to manipulate feature template are:<br />
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
